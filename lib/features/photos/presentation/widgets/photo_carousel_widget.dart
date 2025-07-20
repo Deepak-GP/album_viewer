@@ -26,7 +26,8 @@ class _PhotoCarouselWidgetState extends State<PhotoCarouselWidget> {
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: _centerPage);
+    _pageController =
+        PageController(initialPage: _centerPage, viewportFraction: 0.4);
     widget.photoBloc.add(LoadPhotos(widget.albumId));
   }
 
@@ -94,6 +95,7 @@ class _PhotoCarouselWidgetState extends State<PhotoCarouselWidget> {
           child: PageView.builder(
             controller: _pageController,
             scrollDirection: Axis.horizontal,
+            pageSnapping: false,
             itemCount: _infinitePages,
             itemBuilder: (context, pageIndex) {
               final photoIndex = _getPhotoIndex(pageIndex);
