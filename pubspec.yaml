@@ -67,8 +67,7 @@ dependencies:
   # JSON serialization
   json_annotation: ^4.8.1
 
-  # Infinite scroll pagination
-  infinite_scroll_pagination: ^4.0.0
+
 
 dev_dependencies:
   flutter_test:

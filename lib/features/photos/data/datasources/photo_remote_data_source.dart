@@ -23,7 +23,7 @@ class PhotoRemoteDataSourceImpl implements PhotoRemoteDataSource {
       final List<dynamic> jsonList = response.data;
       return jsonList.map((json) => PhotoModel.fromJson(json)).toList();
     } catch (e) {
-      return AppConstants.mockAlbumData
+      return AppConstants.mockPhotoData
           .map((json) => PhotoModel.fromJson(json))
           .toList();
     }

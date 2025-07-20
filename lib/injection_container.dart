@@ -7,7 +7,6 @@ import 'features/albums/data/datasources/album_remote_data_source.dart';
 import 'features/albums/data/repositories/album_repository_impl.dart';
 import 'features/albums/domain/repositories/album_repository.dart';
 import 'features/albums/domain/usecases/get_albums.dart';
-import 'features/albums/presentation/controllers/album_pagination_controller.dart';
 import 'features/photos/data/datasources/photo_local_data_source.dart';
 import 'features/photos/data/datasources/photo_remote_data_source.dart';
 import 'features/photos/data/repositories/photo_repository_impl.dart';
@@ -61,12 +60,6 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetCachedAlbums(sl()));
   sl.registerLazySingleton(() => GetPhotosByAlbumId(sl()));
   sl.registerLazySingleton(() => GetCachedPhotosByAlbumId(sl()));
-
-  // Controllers
-  sl.registerFactory(() => AlbumPaginationController(
-        getAlbumsWithPagination: sl(),
-        getCachedAlbums: sl(),
-      ));
 
   // BLoCs
   sl.registerFactoryParam<PhotoBloc, int, void>(
