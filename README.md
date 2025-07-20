@@ -5,6 +5,7 @@ A Flutter application that displays albums with photos in an infinite scrolling 
 ## Features
 
 - **Infinite Horizontal Scrolling**: Photos within each album scroll infinitely horizontally, looping back to the first photo after the last one
+- **Infinite Vertical Scrolling**: Albums scroll infinitely vertically, allowing users to continuously browse through all available albums
 - **Independent Scrolling**: Each album's photos scroll independently from other albums
 - **Data Caching**: Uses Hive for local storage to cache albums and photos
 - **Offline Support**: App shows cached data immediately when reopened
@@ -61,6 +62,7 @@ lib/
 
 ### Infinite Scrolling
 - **Horizontal Scrolling**: Each album's photos are duplicated 3 times for infinite horizontal scrolling
+- **Vertical Scrolling**: Albums are displayed in a vertical list with infinite scrolling capability
 - **Independent Controllers**: Each album has its own horizontal scroll controller for independent scrolling
 
 ### Data Caching
